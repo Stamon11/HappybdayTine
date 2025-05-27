@@ -3,32 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Une lumière douce pour Tine</title>
+    <title>Happy Birthday Tine</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
             background-color: #f9f9f9;
             padding: 20px;
+            margin: 0;
+        }
+
+        .banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ff69b4;
+            color: white;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .container {
             max-width: 600px;
-            margin: auto;
+            margin: 80px auto 20px;
             padding: 20px;
             background-color: #fff;
             box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
             border-radius: 10px;
         }
 
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
         .message {
-            margin-top: 20px;
             font-size: 18px;
             color: #333;
         }
@@ -39,8 +52,11 @@
     </style>
 </head>
 <body>
+    <div class="banner" id="banner">
+        Happy birthday Tine
+    </div>
+
     <div class="container">
-        <img src="dday.png" alt="Une lumière douce pour Tine">
         <div class="message">
             <h1>✨ A gentle light for your day, Tine...</h1>
             <p>Tine,</p>
@@ -57,5 +73,11 @@
                <strong>I see you. And I honour you. Always.</strong> 🤍</p>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("Banner loaded successfully!");
+        });
+    </script>
 </body>
 </html>
