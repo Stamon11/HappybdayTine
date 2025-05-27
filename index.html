@@ -29,13 +29,15 @@
         }
 
         .banner {
-            display: inline-block;
-            white-space: nowrap;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            animation: scrollBanner 30s linear infinite; /* Défilement lent */
-        }
+    display: inline-block;
+    white-space: nowrap;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    animation: scrollBanner 30s linear infinite; /* Défilement lent */
+    padding-left: 10px; /* Ajoute un espace à gauche */
+}
+
 
         @keyframes scrollBanner {
             from { transform: translateX(100%); }
