@@ -10,7 +10,11 @@
             position: relative;
             height: 100vh;
         }
-
+<style>
+    @keyframes scrollBanner {
+        0% { transform: translateX(0); } /* Démarrage immédiat */
+        100% { transform: translateX(-100%); }
+    }
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
@@ -30,15 +34,14 @@
             z-index: 1000;
         }
 
-        .banner {
-            display: inline-block;
-            white-space: nowrap;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            animation: scrollBanner 30s linear infinite; /* Défilement lent */
-            text-align: center; /* Corrige l’alignement */
-        }
+       .banner {
+        display: inline-block;
+        white-space: nowrap;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        animation: scrollBanner 30s linear infinite; /* Texte défile dès l’ouverture */
+    }
 
         @keyframes scrollBanner {
             from { transform: translateX(100%); }
@@ -102,11 +105,11 @@
 <body>
     <div class="banner-container">
         <div class="banner">
-            Happy birthday Tine • &nbsp;&nbsp;&nbsp; Happy birthday Tine • &nbsp;&nbsp;&nbsp; Happy birthday Tine • &nbsp;&nbsp;&nbsp; 
-            Happy birthday Tine • &nbsp;&nbsp;&nbsp; Happy birthday Tine • &nbsp;&nbsp;&nbsp; Happy birthday Tine • &nbsp;&nbsp;&nbsp;
-            Happy birthday Tine • &nbsp;&nbsp;&nbsp; Happy birthday Tine • &nbsp;&nbsp;&nbsp; Happy birthday Tine • &nbsp;&nbsp;&nbsp;
-            Happy birthday Tine • &nbsp;&nbsp;&nbsp; Happy birthday Tine • &nbsp;&nbsp;&nbsp; Happy birthday Tine • &nbsp;&nbsp;&nbsp;
-            Happy birthday Tine • &nbsp;&nbsp;&nbsp; Happy birthday Tine
+            Happy birthday Tine &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; Happy birthday Tine &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; 
+            Happy birthday Tine &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; Happy birthday Tine &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; 
+            Happy birthday Tine &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; Happy birthday Tine &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; 
+            Happy birthday Tine &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; Happy birthday Tine &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; 
+            Happy birthday Tine &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; Happy birthday Tine &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; 
         </div>
     </div>
 
