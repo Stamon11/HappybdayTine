@@ -7,7 +7,7 @@
     <style>
         html, body {
             overflow: auto; /* Permet le scroll */
-            background-color: #f9f9f9;
+            background: linear-gradient(to bottom, #d1b3ff, #e6ccff, #f0e6ff);
             position: relative;
             height: 100vh;
         }
@@ -65,34 +65,15 @@
             color: #333;
         }
 
-        /* Mini étoiles scintillantes */
-        .stars-container {
-            position: fixed;
-            top: 0;
-            left: 0;
+        /* Ballons et Oursons en arrière-plan partout */
+        .floating-container {
+            position: absolute;
             width: 100%;
-            height: 100vh;
+            height: 200vh;
             z-index: -1;
             pointer-events: none;
         }
 
-        .star {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background-color: white;
-            border-radius: 50%;
-            opacity: 0.8;
-            animation: twinkle 2s infinite alternate;
-        }
-
-        @keyframes twinkle {
-            0% { opacity: 0.3; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1.2); }
-            100% { opacity: 0.3; transform: scale(0.8); }
-        }
-
-        /* Ballons et Oursons en avant-plan */
         .floating {
             position: absolute;
             width: 50px;
@@ -100,8 +81,6 @@
             background-size: cover;
             opacity: 0.9;
             animation: floatAllDirections 8s infinite linear;
-            pointer-events: none; /* Empêche de bloquer le clic et scroll */
-            z-index: 999;
         }
 
         @keyframes floatAllDirections {
@@ -114,13 +93,13 @@
     </style>
 </head>
 <body>
-    <div class="stars-container"></div>
-
     <div class="banner-container">
         <div class="banner">
             Happy birthday Tine • Happy birthday Tine • Happy birthday Tine • Happy birthday Tine • Happy birthday Tine
         </div>
     </div>
+
+    <div class="floating-container"></div>
 
     <div class="container">
         <img src="dday.png" alt="D-Day Image">
@@ -140,32 +119,20 @@
         </div>
     </div>
 
-    <!-- Étoiles scintillantes + Ballons & Oursons flottants -->
+    <!-- Ballons & Oursons flottants partout -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const images = ["balloon.png", "teddy.png"];
             
-            // Ajouter ballons & oursons avec mouvement aléatoire
-            for (let i = 0; i < 10; i++) {
+            let floatingContainer = document.querySelector(".floating-container");
+            for (let i = 0; i < 30; i++) {
                 let floatingElement = document.createElement("div");
                 floatingElement.className = "floating";
                 floatingElement.style.backgroundImage = `url(${images[Math.floor(Math.random() * images.length)]})`;
-                floatingElement.style.top = Math.random() * window.innerHeight + "px";
+                floatingElement.style.top = Math.random() * window.innerHeight * 2 + "px";
                 floatingElement.style.left = Math.random() * window.innerWidth + "px";
                 
-                document.body.appendChild(floatingElement);
-            }
-
-            // Ajouter étoiles scintillantes sur toute la page
-            let starContainer = document.querySelector(".stars-container");
-            for (let i = 0; i < 100; i++) {
-                let star = document.createElement("div");
-                star.className = "star";
-                star.style.top = Math.random() * window.innerHeight + "px";
-                star.style.left = Math.random() * window.innerWidth + "px";
-                star.style.animationDelay = Math.random() * 2 + "s";
-
-                starContainer.appendChild(star);
+                floatingContainer.appendChild(floatingElement);
             }
         });
     </script>
