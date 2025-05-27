@@ -13,24 +13,27 @@
             margin: 0;
         }
 
-        .banner {
+        .banner-container {
             position: fixed;
             top: 0;
-            left: 100%;
             width: 100%;
+            overflow: hidden;
             background-color: #ff69b4;
+            padding: 10px 0;
+        }
+
+        .banner {
+            display: inline-block;
+            white-space: nowrap;
             color: white;
-            padding: 10px;
             font-size: 24px;
             font-weight: bold;
-            text-align: center;
-            white-space: nowrap;
             animation: scrollBanner 10s linear infinite;
         }
 
         @keyframes scrollBanner {
-            from { left: 100%; }
-            to { left: -100%; }
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
         }
 
         .container {
@@ -55,12 +58,14 @@
     </style>
 </head>
 <body>
-    <div class="banner">
-        Happy birthday Tine
+    <div class="banner-container">
+        <div class="banner">
+            Happy birthday Tine • Happy birthday Tine • Happy birthday Tine • Happy birthday Tine • Happy birthday Tine
+        </div>
     </div>
 
     <div class="container">
-        <img src="image.jpg" alt="D-Day Image">
+        <img src="dday.jpg" alt="D-Day Image">
         <div class="message">
             <p>Tine,</p>
             <p>I don't know why... but I feel you're rebuilding yourself.<br>
