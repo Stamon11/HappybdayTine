@@ -79,11 +79,12 @@
 
         .floating {
             position: absolute;
-            width: 80px; /* Taille légèrement augmentée */
+            width: 80px;
             height: 80px;
             background-size: contain;
+            background-repeat: no-repeat; /* Empêche la répétition de l'image */
             opacity: 1;
-            filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.4)); /* Renforcement du contraste */
+            filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.4)); /* Ajout de contraste */
             animation: floatAllDirections 12s infinite linear;
         }
 
