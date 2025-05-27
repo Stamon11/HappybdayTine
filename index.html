@@ -11,6 +11,7 @@
             background-color: #f9f9f9;
             padding: 20px;
             margin: 0;
+            overflow: hidden;
         }
 
         .banner-container {
@@ -55,6 +56,23 @@
             font-size: 18px;
             color: #333;
         }
+
+        /* Ballons et Oursons */
+        .floating {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-size: cover;
+            animation: float 10s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(50px, 100px); }
+            50% { transform: translate(-50px, 200px); }
+            75% { transform: translate(-100px, 100px); }
+            100% { transform: translate(0, 0); }
+        }
     </style>
 </head>
 <body>
@@ -81,5 +99,20 @@
                <strong>I see you. And I honour you. Always.</strong> 🤍</p>
         </div>
     </div>
+
+    <!-- Ballons et oursons flottants -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const images = ["balloon.png", "teddy.png"];
+            for (let i = 0; i < 10; i++) {
+                let floatingElement = document.createElement("div");
+                floatingElement.className = "floating";
+                floatingElement.style.backgroundImage = `url(${images[Math.floor(Math.random() * images.length)]})`;
+                floatingElement.style.top = Math.random() * window.innerHeight + "px";
+                floatingElement.style.left = Math.random() * window.innerWidth + "px";
+                document.body.appendChild(floatingElement);
+            }
+        });
+    </script>
 </body>
 </html>
