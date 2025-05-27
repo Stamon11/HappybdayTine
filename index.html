@@ -67,17 +67,18 @@
         /* Mini étoiles scintillantes */
         .star {
             position: absolute;
-            width: 5px;
-            height: 5px;
-            background-color: #fff;
+            width: 10px;
+            height: 10px;
+            background-color: yellow;
             border-radius: 50%;
-            opacity: 0;
+            opacity: 1;
             animation: twinkle 2s infinite alternate;
         }
 
         @keyframes twinkle {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+            0% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0.3; transform: scale(0.8); }
         }
 
         /* Ballons et Oursons en avant-plan */
@@ -101,7 +102,7 @@
 <body>
     <div class="banner-container">
         <div class="banner">
-            Happy birthday Tine     •     Happy birthday Tine     •     Happy birthday Tine     •     Happy birthday Tine     •     Happy birthday Tine
+            Happy birthday Tine • Happy birthday Tine • Happy birthday Tine • Happy birthday Tine • Happy birthday Tine
         </div>
     </div>
 
