@@ -28,15 +28,16 @@
             z-index: 1000;
         }
 
-        .banner {
-    display: inline-block;
-    white-space: nowrap;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    animation: scrollBanner 30s linear infinite; /* Défilement lent */
-    padding-left: 10px; /* Ajoute un espace à gauche */
-}
+         .banner {
+        display: inline-block;
+        white-space: nowrap;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        animation: scrollBanner 30s linear infinite; /* Défilement lent */
+        padding-left: 0; /* Supprime l’espace à gauche */
+        margin-left: -5px; /* Ajuste si nécessaire */
+        }
 
 
         @keyframes scrollBanner {
