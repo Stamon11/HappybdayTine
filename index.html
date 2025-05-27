@@ -12,9 +12,10 @@
         }
 <style>
      @keyframes scrollBanner {
-        0% { transform: translateX(0); } /* Démarrage immédiat */
-        100% { transform: translateX(-100%); }
-        }
+    0% { transform: translateX(100%); } /* Démarrage immédiat avec mouvement */
+    100% { transform: translateX(-100%); }
+}
+
 
         body {
             font-family: 'Arial', sans-serif;
@@ -41,7 +42,9 @@
     color: white;
     font-size: 24px;
     font-weight: bold;
-    animation: scrollBanner 30s linear infinite; /* Texte commence à défiler instantanément */
+    animation: scrollBanner 30s linear infinite; /* Texte commence immédiatement et défile correctement */
+}
+
 
         @keyframes scrollBanner {
             from { transform: translateX(100%); }
