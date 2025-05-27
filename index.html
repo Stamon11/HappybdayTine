@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Tine</title>
     <style>
+        html, body {
+            overflow: auto; /* Permet le scroll */
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
             background-color: #f9f9f9;
             padding: 20px;
             margin: 0;
-            overflow: hidden;
             position: relative;
         }
 
@@ -69,6 +72,7 @@
             background-size: cover;
             opacity: 0.8;
             animation: floatRandom 5s linear infinite alternate;
+            pointer-events: none; /* Empêche les ballons de bloquer l'interaction */
         }
 
         @keyframes floatRandom {
