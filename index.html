@@ -21,7 +21,9 @@
         .banner-container {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
+            height: 50px; /* Assure que la bannière recouvre bien l'écran */
             overflow: hidden;
             background-color: #ff69b4;
             padding: 10px 0;
@@ -35,9 +37,7 @@
             font-size: 24px;
             font-weight: bold;
             animation: scrollBanner 30s linear infinite; /* Défilement lent */
-            padding-left: 0; /* Supprime l’espace à gauche */
-            margin-left: -5px; /* Ajuste si nécessaire */
-            text-align: center; /* Correction pour éviter l'espace blanc */
+            text-align: center; /* Corrige l’alignement */
         }
 
         @keyframes scrollBanner {
@@ -76,7 +76,7 @@
             height: 200vh;
             z-index: -1;
             pointer-events: none;
-            background-color: transparent; /* Correction pour ne pas masquer les éléments */
+            background-color: transparent;
         }
 
         .floating {
@@ -84,9 +84,9 @@
             width: 80px;
             height: 80px;
             background-size: contain;
-            background-repeat: no-repeat; /* Empêche la répétition de l'image */
+            background-repeat: no-repeat;
             opacity: 1;
-            filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.4)); /* Ajout de contraste */
+            filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.4));
             animation: floatAllDirections 12s infinite linear;
         }
 
@@ -102,9 +102,11 @@
 <body>
     <div class="banner-container">
         <div class="banner">
-            Happy birthday Tine&nbsp;&nbsp;&nbsp;&nbsp; Happy birthday Tine&nbsp;&nbsp;&nbsp;&nbsp; Happy birthday Tine&nbsp;&nbsp;&nbsp;&nbsp; Happy birthday Tine&nbsp;&nbsp;&nbsp;&nbsp;
-            Happy birthday Tine&nbsp;&nbsp;&nbsp;&nbsp; Happy birthday Tine&nbsp;&nbsp;&nbsp;&nbsp; Happy birthday Tine&nbsp;&nbsp;&nbsp;&nbsp; Happy birthday Tine&nbsp;&nbsp;&nbsp;&nbsp;
-            Happy birthday Tine&nbsp;&nbsp;&nbsp;&nbsp; Happy birthday Tine&nbsp;&nbsp;&nbsp;&nbsp; Happy birthday Tine&nbsp;&nbsp;&nbsp;&nbsp; Happy birthday Tine&nbsp;&nbsp;&nbsp;&nbsp;
+            Happy birthday Tine • &nbsp;&nbsp;&nbsp; Happy birthday Tine • &nbsp;&nbsp;&nbsp; Happy birthday Tine • &nbsp;&nbsp;&nbsp; 
+            Happy birthday Tine • &nbsp;&nbsp;&nbsp; Happy birthday Tine • &nbsp;&nbsp;&nbsp; Happy birthday Tine • &nbsp;&nbsp;&nbsp;
+            Happy birthday Tine • &nbsp;&nbsp;&nbsp; Happy birthday Tine • &nbsp;&nbsp;&nbsp; Happy birthday Tine • &nbsp;&nbsp;&nbsp;
+            Happy birthday Tine • &nbsp;&nbsp;&nbsp; Happy birthday Tine • &nbsp;&nbsp;&nbsp; Happy birthday Tine • &nbsp;&nbsp;&nbsp;
+            Happy birthday Tine • &nbsp;&nbsp;&nbsp; Happy birthday Tine
         </div>
     </div>
 
