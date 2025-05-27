@@ -28,17 +28,17 @@
             z-index: 1000;
         }
 
-         .banner {
-        display: inline-block;
-        white-space: nowrap;
-        color: white;
-        font-size: 24px;
-        font-weight: bold;
-        animation: scrollBanner 30s linear infinite; /* Défilement lent */
-        padding-left: 0; /* Supprime l’espace à gauche */
-        margin-left: -5px; /* Ajuste si nécessaire */
+        .banner {
+            display: inline-block;
+            white-space: nowrap;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            animation: scrollBanner 30s linear infinite; /* Défilement lent */
+            padding-left: 0; /* Supprime l’espace à gauche */
+            margin-left: -5px; /* Ajuste si nécessaire */
+            text-align: center; /* Correction pour éviter l'espace blanc */
         }
-
 
         @keyframes scrollBanner {
             from { transform: translateX(100%); }
@@ -76,7 +76,7 @@
             height: 200vh;
             z-index: -1;
             pointer-events: none;
-            background-color: rgba(255, 255, 255, 0.05); /* Léger contraste sans altérer ton design */
+            background-color: transparent; /* Correction pour ne pas masquer les éléments */
         }
 
         .floating {
@@ -102,7 +102,7 @@
 <body>
     <div class="banner-container">
         <div class="banner">
-            Happy birthday Tine &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Happy birthday Tine &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Happy birthday Tine &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Happy birthday Tine &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Happy birthday Tine
+            Happy birthday Tine&nbsp;Happy birthday Tine&nbsp;Happy birthday Tine&nbsp;Happy birthday Tine&nbsp;Happy birthday Tine
         </div>
     </div>
 
