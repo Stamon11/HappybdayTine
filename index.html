@@ -35,7 +35,7 @@
             color: white;
             font-size: 24px;
             font-weight: bold;
-            animation: scrollBanner 10s linear infinite;
+            animation: scrollBanner 30s linear infinite; /* Défilement lent */
         }
 
         @keyframes scrollBanner {
@@ -65,9 +65,11 @@
             color: #333;
         }
 
-        /* Ballons et Oursons en arrière-plan partout */
+        /* Ballons et Oursons couvrant toute la page */
         .floating-container {
-            position: absolute;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 200vh;
             z-index: -1;
@@ -76,28 +78,27 @@
 
         .floating {
             position: absolute;
-            width: 50px;
-            height: 50px;
+            width: 70px; /* Taille légèrement augmentée */
+            height: 70px;
             background-size: contain;
             opacity: 1;
             filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
-            animation: floatAllDirections 8s infinite linear;
+            animation: floatAllDirections 12s infinite linear;
         }
 
         @keyframes floatAllDirections {
             0% { transform: translate(0, 0); }
-            25% { transform: translate(50px, -100px); }
-            50% { transform: translate(-50px, 100px); }
-            75% { transform: translate(-100px, -50px); }
-            100% { transform: translate(100px, 50px); }
+            25% { transform: translate(50px, -120px); }
+            50% { transform: translate(-50px, 120px); }
+            75% { transform: translate(-120px, -50px); }
+            100% { transform: translate(120px, 50px); }
         }
     </style>
 </head>
 <body>
     <div class="banner-container">
         <div class="banner">
-            Happy birthday Tine &nbsp;&nbsp;&nbsp; Happy birthday Tine &nbsp;&nbsp;&nbsp; Happy birthday Tine &nbsp;&nbsp;&nbsp; Happy birthday Tine &nbsp;&nbsp;&nbsp; Happy birthday Tine
-            Happy birthday Tine &nbsp;&nbsp;&nbsp; Happy birthday Tine &nbsp;&nbsp;&nbsp; Happy birthday Tine &nbsp;&nbsp;&nbsp; Happy birthday Tine &nbsp;&nbsp;&nbsp; Happy birthday Tine
+            Happy birthday Tine &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Happy birthday Tine &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Happy birthday Tine &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Happy birthday Tine &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Happy birthday Tine
         </div>
     </div>
 
@@ -121,7 +122,7 @@
         </div>
     </div>
 
-    <!-- Ballons & Oursons flottants partout -->
+    <!-- Ballons & Oursons flottants couvrant toute la page -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const images = ["balloon.png", "teddy.png"];
