@@ -7,15 +7,15 @@
     <style>
         html, body {
             overflow: auto; /* Permet le scroll */
+            background-color: #f9f9f9;
+            position: relative;
         }
 
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
-            background-color: #f9f9f9;
             padding: 20px;
             margin: 0;
-            position: relative;
         }
 
         .banner-container {
@@ -64,15 +64,32 @@
             color: #333;
         }
 
-        /* Ballons et Oursons */
+        /* Mini étoiles scintillantes */
+        .star {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #fff;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle 2s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Ballons et Oursons en avant-plan */
         .floating {
             position: absolute;
             width: 50px;
             height: 50px;
             background-size: cover;
-            opacity: 0.8;
-            animation: floatRandom 5s linear infinite alternate;
-            pointer-events: none; /* Empêche les ballons de bloquer l'interaction */
+            opacity: 0.9;
+            animation: floatRandom 10s linear infinite alternate;
+            pointer-events: none; /* Empêche de bloquer le clic et scroll */
+            z-index: 999;
         }
 
         @keyframes floatRandom {
@@ -106,10 +123,12 @@
         </div>
     </div>
 
-    <!-- Ballons et oursons flottants -->
+    <!-- Étoiles scintillantes + Ballons & Oursons flottants -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const images = ["balloon.png", "teddy.png"];
+            
+            // Ajouter ballons & oursons
             for (let i = 0; i < 10; i++) {
                 let floatingElement = document.createElement("div");
                 floatingElement.className = "floating";
@@ -120,8 +139,19 @@
                 document.body.appendChild(floatingElement);
 
                 setInterval(() => {
-                    floatingElement.style.transform = `translate(${Math.random() * 50 - 25}px, ${Math.random() * 50 - 25}px)`;
-                }, 2000);
+                    floatingElement.style.transform = `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px)`;
+                }, 3000);
+            }
+
+            // Ajouter étoiles scintillantes
+            for (let i = 0; i < 50; i++) {
+                let star = document.createElement("div");
+                star.className = "star";
+                star.style.top = Math.random() * window.innerHeight + "px";
+                star.style.left = Math.random() * window.innerWidth + "px";
+                star.style.animationDelay = Math.random() * 2 + "s";
+
+                document.body.appendChild(star);
             }
         });
     </script>
