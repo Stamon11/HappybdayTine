@@ -16,7 +16,7 @@
         .banner {
             position: fixed;
             top: 0;
-            left: 0;
+            left: 100%;
             width: 100%;
             background-color: #ff69b4;
             color: white;
@@ -24,12 +24,13 @@
             font-size: 24px;
             font-weight: bold;
             text-align: center;
-            animation: fadeIn 1s ease-in-out;
+            white-space: nowrap;
+            animation: scrollBanner 10s linear infinite;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        @keyframes scrollBanner {
+            from { left: 100%; }
+            to { left: -100%; }
         }
 
         .container {
@@ -41,24 +42,26 @@
             border-radius: 10px;
         }
 
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
         .message {
             font-size: 18px;
             color: #333;
         }
-
-        h1 {
-            color: #5a5a5a;
-        }
     </style>
 </head>
 <body>
-    <div class="banner" id="banner">
+    <div class="banner">
         Happy birthday Tine
     </div>
 
     <div class="container">
+        <img src="image.jpg" alt="D-Day Image">
         <div class="message">
-            <h1>✨ A gentle light for your day, Tine...</h1>
             <p>Tine,</p>
             <p>I don't know why... but I feel you're rebuilding yourself.<br>
                I feel you're finding a new lease of life, a calm, a gentle strength.</p>
@@ -73,11 +76,5 @@
                <strong>I see you. And I honour you. Always.</strong> 🤍</p>
         </div>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            console.log("Banner loaded successfully!");
-        });
-    </script>
 </body>
 </html>
