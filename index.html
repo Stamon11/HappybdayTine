@@ -96,6 +96,14 @@
             75% { transform: translate(-120px, -50px); }
             100% { transform: translate(120px, 50px); }
         }
+
+        /* Agrandissement des deux dernières images */
+        .large-image {
+            width: 100%;
+            max-width: 900px; /* Augmente la taille maximale */
+            display: block;
+            margin: 20px auto;
+        }
     </style>
 </head>
 <body>
@@ -112,48 +120,56 @@
             <br><br>
             I would like to sit with you in silence🙏"
             <br><br>
-            <br><br>
-           🌸 You are my mirror soul, my twin flame. I will always cherish what we shared.
-I offer you this rose quartz and this Buddha’s hand as a blessing — may they bring peace, clarity, and light on your path.
-Whatever you choose, may it lead you to deep and lasting happiness. 🌸
         </div>
-            <br><br>
-       
-🌸
-I loved you from your roots to your soul.
-I loved every part of you — from your toenails to the roots of your hair.
-I loved your heart — I felt it beat within me, I vibrated with it.
+        <br><br>
 
-I was ready to move mountains for you, to fight with honor.
-I dreamed of a peaceful home for you and your daughters.
-I would have reached for the moon just to bring it to your room.
+        🌸 You are my mirror soul, my twin flame. I will always cherish what we shared.
+        I offer you this rose quartz and this Buddha’s hand as a blessing — may they bring peace, clarity, and light on your path.
+        Whatever you choose, may it lead you to deep and lasting happiness. 🌸
 
-I wanted to shower you with flowers, love, respect, protection, and attention.
-What we shared was real to me — physical, emotional, and spiritual.
+        <br><br>
 
-I had never known such intensity before.
-And if now our paths must part...
-I hold onto the truth that this love existed, deeply and truly.
+        🌸
+        I loved you from your roots to your soul.
+        I loved every part of you — from your toenails to the roots of your hair.
+        I loved your heart — I felt it beat within me, I vibrated with it.
 
-I release you with pain, but without hatred.
-And now, I choose to rise, to move forward,
-carrying with me this one truth:
-I have loved. Truly. Completely.
-🌸
+        I was ready to move mountains for you, to fight with honor.
+        I dreamed of a peaceful home for you and your daughters.
+        I would have reached for the moon just to bring it to your room.
 
-            <br><br>
+        I wanted to shower you with flowers, love, respect, protection, and attention.
+        What we shared was real to me — physical, emotional, and spiritual.
+
+        I had never known such intensity before.
+        And if now our paths must part...
+        I hold onto the truth that this love existed, deeply and truly.
+
+        I release you with pain, but without hatred.
+        And now, I choose to rise, to move forward,
+        carrying with me this one truth:
+        I have loved. Truly. Completely.
+        🌸
+
+        <br><br>
         -------------------------------------------------------------------------------------
+
         <div class="message">
             The universe has shown me the magic and love of nature since I moved into my new home, and I wanted to share that with you.
         </div>
+
         <div class="container">
-        <img src="coeur_blanc_1.jpg" alt="coeur_blanc_1 Image">
-            <div class="container">
-        <img src="coeur_blanc_2.jpg" alt="coeur_blanc_2 Image">
-                <div class="container">
-        <img src="ciel.jpg" alt="ciel Image">
-                    <div class="container">
-        <img src="lapin.jpg" alt="lapin Image">
+            <img src="coeur_blanc_1.jpg" alt="coeur_blanc_1 Image">
+        </div>
+        <div class="container">
+            <img src="coeur_blanc_2.jpg" alt="coeur_blanc_2 Image">
+        </div>
+        <div class="container">
+            <img src="ciel.jpg" alt="ciel Image" class="large-image"> <!-- Agrandi -->
+        </div>
+        <div class="container">
+            <img src="lapin.jpg" alt="lapin Image" class="large-image"> <!-- Agrandi -->
+        </div>
     </div>
 
     <script>
@@ -164,7 +180,7 @@ I have loved. Truly. Completely.
             for (let i = 0; i < 30; i++) {
                 let floatingElement = document.createElement("div");
                 floatingElement.className = "floating";
-                floatingElement.style.backgroundImage = url(${images[Math.floor(Math.random() * images.length)]});
+                floatingElement.style.backgroundImage = `url(${images[Math.floor(Math.random() * images.length)]})`;
                 floatingElement.style.top = Math.random() * window.innerHeight * 2 + "px";
                 floatingElement.style.left = Math.random() * window.innerWidth + "px";
                 floatingContainer.appendChild(floatingElement);
