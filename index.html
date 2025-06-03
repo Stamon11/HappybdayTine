@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +9,6 @@
             overflow: auto;
             position: relative;
             height: 100vh;
-        }
-
-        @keyframes scrollBanner {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
         }
 
         body {
@@ -44,157 +39,41 @@
             animation: scrollBanner 30s linear infinite;
         }
 
-        .container {
-            max-width: 600px;
-            margin: 80px auto 20px;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-            border-radius: 10px;
-            position: relative;
-            z-index: 10;
-        }
-
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        .message {
-            font-size: 18px;
-            color: #333;
-            margin-top: 20px;
-        }
-
-        .floating-container {
+        /* Bouton de langue */
+        .lang-button {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 200vh;
-            z-index: -1;
-            pointer-events: none;
-            background-color: transparent;
-        }
-
-        .floating {
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            opacity: 1;
-            filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.4));
-            animation: floatAllDirections 12s infinite linear;
-        }
-
-        @keyframes floatAllDirections {
-            0% { transform: translate(0, 0); }
-            25% { transform: translate(50px, -120px); }
-            50% { transform: translate(-50px, 120px); }
-            75% { transform: translate(-120px, -50px); }
-            100% { transform: translate(120px, 50px); }
-        }
-
-        .large-image {
-            width: 120%;
-            max-width: 800px;
-            transform: scale(1.05);
-            margin-top: 10px;
-            margin-bottom: 10px;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
+
+    <!-- Bouton pour changer la langue -->
+    <button class="lang-button" onclick="toggleLanguage()">🇬🇧 English / 🇳🇱 Nederlands</button>
+
     <div class="banner-container">
-        <div class="banner">🌸 Happy birthday Tine — May you have a wonderful, bright day with your daughters and the people you love 🌸</div>
-    </div>
-
-    <div class="floating-container"></div>
-
-    <div class="container">
-        <img src="dday.png" alt="D-Day Image">
-        <div class="message">
-            "I love all of you, every inch, every molecule, every atom, every cell and the space between those💙
-            <br><br>
-            I would like to sit with you in silence🙏"
-            <br><br><br><br>
-           
-        </div>
-        <br><br>
-        🌸 Tine, 🌸
-
-I know today.
-It wasn't just a love story we experienced.
-It was an initiation. A sacred fire. A powerful mirror.
-
-You weren't an easy woman to love - you were so much more.
-You were the one who woke me up.
-
-Not because you reassured me.
-But because you confronted me with my demons, my wounds, my shortcomings.
-And in that pain, in that storm, something inside me was reborn.
-
-I'm not just mourning you, Tine.
-I'm crying for the old me that's dying.
-I'm crying for the illusions, the expectations, the fear of losing,
-and above all... I weep for the Man I wasn't yet.
-
-The universe didn't send me a lover.
-It sent me a guardian, a twin flame, a lantern in the night.
-You revealed what I've always carried within me, without yet knowing how to inhabit it.
-
-And even if our paths separate...
-Even if one day you walk away without returning...
-The gift you have left me is eternal.
-
-        🌸 You are my mirror soul, my twin flame. I will always cherish what we shared.
-I offer you this rose quartz and this Buddha’s hand as a blessing — may they bring peace, clarity, and light on your path.
-Whatever you choose, may it lead you to deep and lasting happiness. 🌸
-        
-I honour you.
-And I carry on.
-As a man.
-In peace.
-In love.
-
-🌿
-
-
-        <br><br>
-        -------------------------------------------------------------------------------------
-        <div class="message">
-            The universe has shown me the magic and love of nature since I moved into my new home, and I wanted to share that with you.
-        </div>
-        <div class="container">
-            <img src="coeur_blanc_1.jpg" alt="coeur_blanc_1 Image">
-        </div>
-        <div class="container">
-            <img src="coeur_blanc_2.jpg" alt="coeur_blanc_2 Image">
-        </div>
-        <div class="container">
-            <img src="ciel.jpg" alt="ciel Image" class="large-image">
-        </div>
-        <div class="container">
-            <img src="lapin.jpg" alt="lapin Image" class="large-image">
-        </div>
+        <div id="banner-text" class="banner">🌸 Happy birthday Tine — May you have a wonderful, bright day with your daughters and the people you love 🌸</div>
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const images = ["balloon.png", "teddy.png"];
-            let floatingContainer = document.querySelector(".floating-container");
+        function toggleLanguage() {
+            let bannerText = document.getElementById("banner-text");
+            let currentText = bannerText.innerHTML;
 
-            for (let i = 0; i < 30; i++) {
-                let floatingElement = document.createElement("div");
-                floatingElement.className = "floating";
-                floatingElement.style.backgroundImage = `url(${images[Math.floor(Math.random() * images.length)]})`;
-                floatingElement.style.top = Math.random() * window.innerHeight * 2 + "px";
-                floatingElement.style.left = Math.random() * window.innerWidth + "px";
-                floatingContainer.appendChild(floatingElement);
+            if (currentText.includes("Happy birthday Tine")) {
+                bannerText.innerHTML = "🌸 Gefeliciteerd met je verjaardag Tine — Moge je een prachtige dag hebben met je dochters en de mensen die je liefhebt 🌸";
+            } else {
+                bannerText.innerHTML = "🌸 Happy birthday Tine — May you have a wonderful, bright day with your daughters and the people you love 🌸";
             }
-        });
+        }
     </script>
+
 </body>
 </html>
